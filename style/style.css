@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "Indie Flower";
+    src: url("fonts/IndieFlower.ttf");
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Indie Flower", "Courier New", Courier, monospace;
+}
+body {
+    background-color: #e8e8e8;
+}
+header,
+main {
+    width: 95vmin;
+    margin: auto;
+}
+
+/* Header */
+header {
+    height: 100px;
+    padding: 1rem 0;
+}
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+/* Main */
+main {
+    position: relative;
+    height: calc(100vh - 120px);
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+
+    background: linear-gradient(
+            to right,
+            transparent 22px,
+            #ccc 22px,
+            #ccc 25px,
+            transparent 25px
+        ),
+        repeating-linear-gradient(transparent, transparent 30px, #ccc 33px),
+        #f5f5f5;
+    padding-left: 27px;
+}
+
+.todos-section {
+    overflow: auto;
+    height: calc(100% - 33px);
+}
+
+.todos-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.todos-section::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.todos-section::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.todos-section::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Todo element */
+.todo {
+    list-style: none;
+    font-size: 1.4rem;
+    line-height: 33px;
+    display: flex;
+    gap: 4px;
+}
+
+/* Todo task text */
+.todoTask {
+    position: relative;
+    padding: 0 2px;
+    min-width: 150px;
+    max-width: calc(100% - 25px);
+    display: inline-block;
+    overflow-y: auto;
+}
+.done {
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+.todoTask:empty:before {
+    content: "What to do ?";
+    color: #ccc;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: max-content;
+}
+
+/* Buttons */
+.btn {
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27px;
+    width: 27px;
+    margin: 2px 0 2px 2px;
+    border: 1px solid #000000;
+    background: transparent;
+    min-width: 27px;
+}
+.btn-delete {
+    color: red;
+    border-color: red;
+    margin-top: 3px;
+    margin-left: auto;
+    margin-right: 10px;
+}
